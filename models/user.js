@@ -15,11 +15,26 @@ module.exports = (sequelize, type) => {
         token varchar32
         token_expiration datetime
         */
-        first_name: type.STRING(50),
-        last_name: type.STRING(50),
-        username: type.STRING(50),
-        password_hash: type.STRING(128),
-        last_seen: type.DATE(),
+        first_name: {
+            type: type.STRING(50),
+            allowNull: false
+        },
+        last_name: {
+            type: type.STRING(50),
+            allowNull: false
+        },
+        username: {
+            type: type.STRING(50),
+            allowNull: false
+        },
+        password_hash: {
+            type: type.STRING(128),
+            allowNull: false
+        },
+        last_seen: {
+            type: type.DATE(),
+            allowNull: false
+        },
         token: type.STRING(32),
         token_expiration: type.DATE()
     })

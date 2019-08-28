@@ -11,8 +11,14 @@ module.exports = (sequelize, type) => {
         discount float
         notes varchar256
         */
-        date: type.DATE(),
-        discount: type.DECIMAL(8,2),
+        //date: type.DATE(),
+        discount: {
+            type: type.DECIMAL(8,2),
+            allowNull: false,
+            validate: {
+                notNull: { msg: "Sale discount is required" }
+            }
+        },
         notes: type.STRING(256)
     })
 }
